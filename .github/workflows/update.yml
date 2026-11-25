@@ -1,0 +1,45 @@
+name: Update Telegram Bot API artifacts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 11 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: telegram-bot-api-artifacts
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Generate API artifacts from official documentation
+        run: python update_api.py
+
+      - name: Validate JSON artifacts
+        run: python update_api.py --check
+
+      - name: Open or update review pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Update Telegram Bot API artifacts"
+          title: "Update Telegram Bot API artifacts"
+          body: |
+            This PR was generated from the official Telegram Bot API documentation.
+
+            Review `api.json` and `api.min.json` for method/type changes before merging. No third-party Telegram schema repository is used as an input.
+          branch: automation/telegram-bot-api-artifacts
+          delete-branch: true
