@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from update_api import check_artifacts, merge_aliases, parse, validate, write_artifacts
+from update_api import check_artifacts, count_entries, merge_aliases, parse, parse_types, validate, write_artifacts
 
 FIXTURE = b"""<h3>Recent changes</h3><p>November 22, 2026</p><p>Bot API 11.0</p>
 <h4>sendMessage</h4><p>Sends a message.</p>
@@ -25,7 +25,8 @@ class UpdateAPITest(unittest.TestCase):
         doc = parse(FIXTURE)
         self.assertEqual(doc["version"], "Bot API 11.0")
         self.assertEqual(doc["release_date"], "November 22, 2026")
-        self.assertEqual(doc["counts"], {"methods": 2, "parameters": 2, "types": 2, "fields": 3})
+        self.assertNotIn("counts", doc)
+        self.assertEqual(count_entries(doc), {"methods": 2, "parameters": 2, "types": 2, "fields": 3})
         self.assertIsNone(doc["methods"]["getMe"]["fields"])
         chat_id, keyboard = doc["methods"]["sendMessage"]["fields"]
         self.assertEqual(chat_id["types"], ["Integer", "String"])
@@ -37,11 +38,17 @@ class UpdateAPITest(unittest.TestCase):
             ["Array of Array of InlineKeyboardButton"],
         )
 
+    def test_parses_comma_and_and_array_unions(self):
+        self.assertEqual(
+            parse_types("Array of InputMediaAudio , InputMediaDocument and InputMediaVideo"),
+            ["Array of InputMediaAudio", "Array of InputMediaDocument", "Array of InputMediaVideo"],
+        )
+
     def test_rejects_partial_schema(self):
         with self.assertRaisesRegex(ValueError, "missing methods"):
             parse(b"<p>Bot API 11.0</p>")
         doc = parse(FIXTURE)
-        doc["counts"]["fields"] += 1
+        doc["counts"] = {"methods": 2, "parameters": 2, "types": 2, "fields": 4}
         with self.assertRaisesRegex(ValueError, "counts"):
             validate(doc)
 
@@ -51,6 +58,7 @@ class UpdateAPITest(unittest.TestCase):
             document = parse(FIXTURE)
             write_artifacts(document, directory)
             check_artifacts(directory)
+            self.assertNotIn("counts", json.loads((directory / "api.json").read_text(encoding="utf-8")))
             document["release_date"] = "unknown"
             (directory / "api.min.json").write_text(json.dumps(document), encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "differ"):

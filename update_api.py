@@ -18,6 +18,7 @@ DATE_PATTERN = re.compile(
     r" [0-9]{1,2}, [0-9]{4}"
 )
 NAME_PATTERN = re.compile(r"[A-Za-z][A-Za-z0-9]*")
+UNION_SEPARATOR = re.compile(r"\s+or\s+|\s*,\s*|\s+and\s+", re.IGNORECASE)
 
 
 @dataclass
@@ -103,6 +104,19 @@ def clean(parts):
     return " ".join(" ".join(parts).split())
 
 
+def parse_types(value):
+    """Parse Telegram's prose union notation while preserving array nesting."""
+    value = clean([value])
+    if not value:
+        return []
+    prefix = ""
+    inner = value
+    if value.startswith("Array of "):
+        prefix, inner = "Array of ", value[len("Array of "):]
+    parts = [part.strip() for part in UNION_SEPARATOR.split(inner) if part.strip()]
+    return [prefix + part for part in parts] or [value]
+
+
 def parse_table(rows):
     if not rows or rows[0][0] not in {"Field", "Parameter"}:
         return "", None
@@ -124,7 +138,7 @@ def parse_table(rows):
         )
         fields.append({
             "name": row[0],
-            "types": row[type_index].split(" or "),
+            "types": parse_types(row[type_index]),
             "required": required,
             "description": description,
         })
@@ -156,12 +170,10 @@ def parse(payload):
         "changelog": f"{SOURCE_URL}#recent-changes",
         "source": SOURCE_URL,
         "source_sha256": hashlib.sha256(payload).hexdigest(),
-        "counts": {},
         "aliases": {"methods": {}, "types": {}},
         "methods": dict(sorted(methods.items())),
         "types": dict(sorted(types.items())),
     }
-    document["counts"] = count_entries(document)
     validate(document)
     return document
 
@@ -232,7 +244,9 @@ def merge_aliases(previous, current):
 
 
 def validate(document):
-    if document["counts"] != count_entries(document):
+    derived = count_entries(document)
+    reported = document.get("counts")
+    if reported is not None and reported != derived:
         raise ValueError("reported counts do not match the schema")
     if not document.get("methods"):
         raise ValueError("missing methods")
@@ -303,7 +317,7 @@ def main():
             if previous is not None:
                 document = merge_aliases(previous, document)
             write_artifacts(document, directory)
-            print(f"Generated both snapshots for {document['version']}: {document['counts']}")
+            print(f"Generated both snapshots for {document['version']}: {count_entries(document)}")
     except (OSError, ValueError) as error:
         print(f"update-api: {error}", file=sys.stderr)
         return 1

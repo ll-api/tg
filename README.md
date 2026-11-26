@@ -11,9 +11,10 @@ an array is represented by its element type alone.
 
 The top-level `aliases` object records compatible renames detected between
 snapshots: `aliases.methods` and `aliases.types` map an old name to the
-current canonical name. Counts include canonical entities only, so aliases
-do not inflate API method/type counts. Consumers should resolve an old name
-through this map before generating calls or type references.
+current canonical name. Consumers should resolve an old name through this
+map before generating calls or type references. Entity counts are deliberately
+not stored as duplicated top-level metadata; consumers should derive them from
+the `methods` and `types` collections.
 
 The updater uses Python 3.13 in GitHub Actions and has no third-party dependencies.
 

@@ -3,12 +3,10 @@
   "release_date": "November 22, 2026",
   "changelog": "https://core.telegram.org/bots/api#recent-changes",
   "source": "https://core.telegram.org/bots/api",
-  "source_sha256": "910b8ef23da10724c021d8c772d9da3cac649ed7ce2078287babe30d4251e21b",
-  "counts": {
-    "methods": 194,
-    "parameters": 997,
-    "types": 426,
-    "fields": 1992
+  "source_sha256": "63ba623c80c72b2825a00d3ad84589441f6b445dd3b7807c239864766e4f0f0b",
+  "aliases": {
+    "methods": {},
+    "types": {}
   },
   "methods": {
     "addStickerToSet": {
@@ -6172,7 +6170,11 @@
         {
           "name": "media",
           "types": [
-            "Array of InputMediaAudio , InputMediaDocument , InputMediaLivePhoto , InputMediaPhoto and InputMediaVideo"
+            "Array of InputMediaAudio",
+            "Array of InputMediaDocument",
+            "Array of InputMediaLivePhoto",
+            "Array of InputMediaPhoto",
+            "Array of InputMediaVideo"
           ],
           "required": true,
           "description": "A JSON-serialized Array describing messages to be sent, must include 2-10 items"
@@ -29642,9 +29644,5 @@
         }
       ]
     }
-  },
-  "aliases": {
-    "methods": {},
-    "types": {}
   }
 }
