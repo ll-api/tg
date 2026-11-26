@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
   group: telegram-bot-api-artifacts
@@ -51,16 +50,17 @@ jobs:
       - name: Validate JSON artifacts
         run: python update.py --check
 
-      - name: Open or update review pull request
-        uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: |
-            Version: ${{ steps.metadata.outputs.version }}
-            Latest Update: ${{ steps.metadata.outputs.latest_update }}
-          title: "${{ steps.metadata.outputs.version }} - ${{ steps.metadata.outputs.latest_update }}"
-          body: |
-            This PR was generated from the official Telegram Bot API documentation.
-
-            Review `api.json` and `api.min.json` for method/type changes before merging. No third-party Telegram schema repository is used as an input.
-          branch: automation/telegram-bot-api-artifacts
-          delete-branch: true
+      - name: Commit and push updated snapshots
+        env:
+          VERSION: ${{ steps.metadata.outputs.version }}
+          LATEST_UPDATE: ${{ steps.metadata.outputs.latest_update }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add api.json api.min.json
+          if git diff --cached --quiet; then
+            echo "No API snapshot changes; no commit is needed."
+            exit 0
+          fi
+          git commit -m "Version: ${VERSION}" -m "Latest Update: ${LATEST_UPDATE}"
+          git push origin HEAD:main
