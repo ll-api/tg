@@ -27,6 +27,7 @@ class Section:
     description: str = ""
     kind: str = ""
     fields: list[dict] | None = None
+    options: list[str] | None = None
 
 
 class TelegramHTMLParser(HTMLParser):
@@ -40,6 +41,7 @@ class TelegramHTMLParser(HTMLParser):
         self.table = None
         self.row = None
         self.cell = None
+        self.list_item = None
         self.hidden = None
 
     def handle_starttag(self, tag, attrs):
@@ -57,6 +59,8 @@ class TelegramHTMLParser(HTMLParser):
                 self.paragraph = []
             elif tag == "table":
                 self.table = []
+            elif tag == "li":
+                self.list_item = []
             elif self.table is not None:
                 if tag == "tr":
                     self.row = []
@@ -78,6 +82,12 @@ class TelegramHTMLParser(HTMLParser):
             if self.current is not None:
                 self.current.description = clean(self.paragraph)
             self.paragraph = None
+        elif tag == "li" and self.list_item is not None:
+            if self.current is not None:
+                if self.current.options is None:
+                    self.current.options = []
+                self.current.options.append(clean(self.list_item))
+            self.list_item = None
         elif tag in {"td", "th"} and self.cell is not None:
             self.row.append(clean(self.cell))
             self.cell = None
@@ -95,7 +105,7 @@ class TelegramHTMLParser(HTMLParser):
         if self.hidden:
             return
         self.page_text.append(text)
-        for capture in (self.heading, self.paragraph, self.cell):
+        for capture in (self.heading, self.paragraph, self.cell, self.list_item):
             if capture is not None:
                 capture.append(text)
 
@@ -115,6 +125,54 @@ def parse_types(value):
         prefix, inner = "Array of ", value[len("Array of "):]
     parts = [part.strip() for part in UNION_SEPARATOR.split(inner) if part.strip()]
     return [prefix + part for part in parts] or [value]
+
+
+def mentioned_types(text, known):
+    """Return known type names in documentation order, without guessing new types."""
+    matches = []
+    for name in sorted(known, key=len, reverse=True):
+        for match in re.finditer(rf"(?<![A-Za-z0-9_]){re.escape(name)}(?![A-Za-z0-9_])", text):
+            matches.append((match.start(), name))
+    result = []
+    for _, name in sorted(matches):
+        if name not in result:
+            result.append(name)
+    return result
+
+
+def extract_returns(description, known):
+    """Extract only explicit return mentions from method prose."""
+    candidates = []
+    for match in re.finditer(r"\b(?:on success\s*,\s*|returns?\s+|returned\s+|is returned\s+)([^.]*)", description, re.IGNORECASE):
+        text = match.group(1)
+        found = []
+        for name in sorted(known, key=len, reverse=True):
+            for type_match in re.finditer(rf"(?<![A-Za-z0-9_]){re.escape(name)}(?![A-Za-z0-9_])", text):
+                value = name
+                prefix = text[:type_match.start()].rstrip()
+                if re.search(r"array\s+of\s*$", prefix, re.IGNORECASE):
+                    value = "Array of " + value
+                found.append((type_match.start(), value))
+        for _, value in sorted(found):
+            if value not in candidates:
+                candidates.append(value)
+    return candidates
+
+
+def attach_derived_metadata(methods, types, sections):
+    known = set(types) | {"String", "Integer", "Boolean", "True", "Float"}
+    section_by_name = {section.name: section for section in sections}
+    for name, method in methods.items():
+        method["returns"] = extract_returns(" ".join(method["description"]), known)
+    for name, typ in types.items():
+        section = section_by_name[name]
+        options = section.options or []
+        subtypes = [option for option in options if option in types and option != name]
+        if subtypes:
+            typ["subtypes"] = subtypes
+    for name, typ in types.items():
+        for subtype in typ.get("subtypes", []):
+            types[subtype].setdefault("subtype_of", []).append(name)
 
 
 def parse_table(rows):
@@ -164,6 +222,7 @@ def parse(payload):
             "description": [section.description] if section.description else [],
             "fields": section.fields,
         }
+    attach_derived_metadata(methods, types, parser.sections)
     document = {
         "version": version.group(),
         "release_date": date.group() if date else "unknown",
@@ -252,6 +311,19 @@ def validate(document):
         raise ValueError("missing methods")
     if not document.get("types"):
         raise ValueError("missing types")
+    known_types = set(document["types"]) | {"String", "Integer", "Boolean", "True", "Float"}
+    for method_name, method in document["methods"].items():
+        for return_type in method.get("returns", []):
+            base = return_type.removeprefix("Array of ")
+            if base not in known_types:
+                raise ValueError(f"method {method_name} returns unknown type {return_type}")
+    for type_name, typ in document["types"].items():
+        for subtype in typ.get("subtypes", []):
+            if subtype not in document["types"]:
+                raise ValueError(f"type {type_name} has unknown subtype {subtype}")
+        for parent in typ.get("subtype_of", []):
+            if parent not in document["types"]:
+                raise ValueError(f"type {type_name} has unknown parent {parent}")
     aliases = document.get("aliases", {})
     if not isinstance(aliases, dict):
         raise ValueError("aliases must be an object")

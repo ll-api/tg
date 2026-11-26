@@ -40,6 +40,9 @@
           "required": true,
           "description": "A JSON-serialized object with information about the added sticker. If exactly the same sticker had already been added to the set, then the set isn't changed."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "answerCallbackQuery": {
@@ -89,6 +92,9 @@
           "required": false,
           "description": "The maximum amount of time in seconds that the result of the callback query may be cached client-side. Defaults to 0."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "answerChatJoinRequestQuery": {
@@ -114,6 +120,9 @@
           "required": true,
           "description": "Result of the query. Must be either “approve” to allow the user to join the chat, “decline” to disallow the user to join the chat, or “queue” to leave the decision to other administrators."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "answerGuestQuery": {
@@ -139,6 +148,9 @@
           "required": true,
           "description": "A JSON-serialized object describing the message to be sent"
         }
+      ],
+      "returns": [
+        "SentGuestMessage"
       ]
     },
     "answerInlineQuery": {
@@ -196,6 +208,9 @@
           "required": false,
           "description": "A JSON-serialized object describing a button to be shown above inline query results"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "answerPreCheckoutQuery": {
@@ -229,6 +244,9 @@
           "required": false,
           "description": "Required if ok is False . Error message in human-readable form that explains the reason for failure to proceed with the checkout (e.g. \"Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!\"). Telegram will display this message to the user."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "answerShippingQuery": {
@@ -270,6 +288,9 @@
           "required": false,
           "description": "Required if ok is False . Error message in human-readable form that explains why it is impossible to complete the order (e.g. “Sorry, delivery to your desired address is unavailable”). Telegram will display this message to the user."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "answerWebAppQuery": {
@@ -295,6 +316,9 @@
           "required": true,
           "description": "A JSON-serialized object describing the message to be sent"
         }
+      ],
+      "returns": [
+        "SentWebAppMessage"
       ]
     },
     "answerWidgetQuery": {
@@ -320,6 +344,9 @@
           "required": false,
           "description": "Data to be returned to the widget, 0-1024 bytes"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "approveChatJoinRequest": {
@@ -346,6 +373,9 @@
           "required": true,
           "description": "Unique identifier of the target user"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "approveSuggestedPost": {
@@ -379,6 +409,9 @@
           "required": false,
           "description": "Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must not be more than 2678400 seconds (30 days) in the future."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "banChatMember": {
@@ -421,6 +454,9 @@
           "required": false,
           "description": "Pass True to delete all messages from the chat for the user that is being removed. If False , the user will be able to see messages in the group that were sent before the user was removed. Always True for supergroups and channels."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "banChatSenderChat": {
@@ -447,6 +483,9 @@
           "required": true,
           "description": "Unique identifier of the target sender chat"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "close": {
@@ -455,7 +494,10 @@
       "description": [
         "Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns True on success. Requires no parameters."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "True"
+      ]
     },
     "closeForumTopic": {
       "name": "closeForumTopic",
@@ -481,6 +523,9 @@
           "required": true,
           "description": "Unique identifier for the target message thread of the forum topic"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "closeGeneralForumTopic": {
@@ -499,6 +544,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "convertGiftToStars": {
@@ -524,6 +572,9 @@
           "required": true,
           "description": "Unique identifier of the regular gift that should be converted to Telegram Stars"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "copyMessage": {
@@ -674,6 +725,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "MessageId"
       ]
     },
     "copyMessages": {
@@ -749,6 +803,9 @@
           "required": false,
           "description": "Pass True to copy the messages without their captions"
         }
+      ],
+      "returns": [
+        "Array of MessageId"
       ]
     },
     "createChatInviteLink": {
@@ -799,6 +856,9 @@
           "required": false,
           "description": "True , if users joining the chat via the link need to be approved by chat administrators. If True , member_limit can't be specified."
         }
+      ],
+      "returns": [
+        "ChatInviteLink"
       ]
     },
     "createChatSubscriptionInviteLink": {
@@ -841,6 +901,9 @@
           "required": true,
           "description": "The amount of Telegram Stars a user must pay initially and after each subsequent subscription period to be a member of the chat; 1-10000"
         }
+      ],
+      "returns": [
+        "ChatInviteLink"
       ]
     },
     "createForumTopic": {
@@ -883,6 +946,9 @@
           "required": false,
           "description": "Unique identifier of the custom emoji shown as the topic icon. Use getForumTopicIconStickers to get all allowed custom emoji identifiers."
         }
+      ],
+      "returns": [
+        "ForumTopic"
       ]
     },
     "createInvoiceLink": {
@@ -1068,6 +1134,9 @@
           "required": false,
           "description": "Pass True if the final price depends on the shipping method. Ignored for payments in Telegram Stars ."
         }
+      ],
+      "returns": [
+        "String"
       ]
     },
     "createNewStickerSet": {
@@ -1125,6 +1194,9 @@
           "required": false,
           "description": "Pass True if stickers in the sticker set must be repainted to the color of text when used in messages, the accent color if used as emoji status, white on chat photos, or another appropriate color based on context; for custom emoji sticker sets only"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "declineChatJoinRequest": {
@@ -1151,6 +1223,9 @@
           "required": true,
           "description": "Unique identifier of the target user"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "declineSuggestedPost": {
@@ -1184,6 +1259,9 @@
           "required": false,
           "description": "Comment for the creator of the suggested post; 0-128 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteAllMessageReactions": {
@@ -1218,6 +1296,9 @@
           "required": false,
           "description": "Identifier of the chat whose reactions will be removed, if the reactions were added by a chat"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteBusinessAccountGift": {
@@ -1243,6 +1324,9 @@
           "required": true,
           "description": "Unique identifier of the regular gift that should be deleted"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteBusinessMessages": {
@@ -1268,6 +1352,9 @@
           "required": true,
           "description": "A JSON-serialized list of 1-100 identifiers of messages to delete. All messages must be from the same chat. See deleteMessage for limitations on which messages can be deleted."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteChatPhoto": {
@@ -1286,6 +1373,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target channel in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteChatStickerSet": {
@@ -1304,6 +1394,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteEphemeralMessage": {
@@ -1338,6 +1431,9 @@
           "required": true,
           "description": "Identifier of the ephemeral message to delete"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteForumTopic": {
@@ -1364,6 +1460,9 @@
           "required": true,
           "description": "Unique identifier for the target message thread of the forum topic"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteMessage": {
@@ -1390,6 +1489,9 @@
           "required": true,
           "description": "Identifier of the message to delete"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteMessageReaction": {
@@ -1432,6 +1534,9 @@
           "required": false,
           "description": "Identifier of the chat whose reaction will be removed, if the reaction was added by a chat"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteMessages": {
@@ -1458,6 +1563,9 @@
           "required": true,
           "description": "A JSON-serialized list of 1-100 identifiers of messages to delete. See deleteMessage for limitations on which messages can be deleted."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteMyCommands": {
@@ -1483,6 +1591,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteStickerFromSet": {
@@ -1500,6 +1611,9 @@
           "required": true,
           "description": "File identifier of the sticker"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteStickerSet": {
@@ -1517,6 +1631,9 @@
           "required": true,
           "description": "Sticker set name"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteStory": {
@@ -1542,6 +1659,9 @@
           "required": true,
           "description": "Unique identifier of the story to delete"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "deleteWebhook": {
@@ -1559,6 +1679,9 @@
           "required": false,
           "description": "Pass True to drop all pending updates"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editChatInviteLink": {
@@ -1617,6 +1740,9 @@
           "required": false,
           "description": "True , if users joining the chat via the link need to be approved by chat administrators. If True , member_limit can't be specified."
         }
+      ],
+      "returns": [
+        "ChatInviteLink"
       ]
     },
     "editChatSubscriptionInviteLink": {
@@ -1651,6 +1777,9 @@
           "required": false,
           "description": "Invite link name; 0-32 characters"
         }
+      ],
+      "returns": [
+        "ChatInviteLink"
       ]
     },
     "editEphemeralMessageCaption": {
@@ -1725,6 +1854,9 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editEphemeralMessageMedia": {
@@ -1775,6 +1907,9 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editEphemeralMessageReplyMarkup": {
@@ -1817,6 +1952,9 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editEphemeralMessageText": {
@@ -1899,6 +2037,9 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editForumTopic": {
@@ -1941,6 +2082,9 @@
           "required": false,
           "description": "New unique identifier of the custom emoji shown as the topic icon. Use getForumTopicIconStickers to get all allowed custom emoji identifiers. Pass an empty string to remove the icon. If not specified, the current icon will be kept."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editGeneralForumTopic": {
@@ -1967,6 +2111,9 @@
           "required": true,
           "description": "New topic name, 1-128 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editMessageCaption": {
@@ -2049,6 +2196,10 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "Message",
+        "True"
       ]
     },
     "editMessageChecklist": {
@@ -2099,6 +2250,9 @@
           "required": false,
           "description": "A JSON-serialized object for the new inline keyboard for the message"
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "editMessageLiveLocation": {
@@ -2197,6 +2351,10 @@
           "required": false,
           "description": "A JSON-serialized object for a new inline keyboard"
         }
+      ],
+      "returns": [
+        "Message",
+        "True"
       ]
     },
     "editMessageMedia": {
@@ -2255,6 +2413,10 @@
           "required": false,
           "description": "A JSON-serialized object for a new inline keyboard"
         }
+      ],
+      "returns": [
+        "Message",
+        "True"
       ]
     },
     "editMessageReplyMarkup": {
@@ -2305,6 +2467,10 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "Message",
+        "True"
       ]
     },
     "editMessageText": {
@@ -2395,6 +2561,10 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "Message",
+        "True"
       ]
     },
     "editMessageWidgetData": {
@@ -2445,6 +2615,9 @@
           "required": false,
           "description": "New data of the widget, which is specific to the message, 0-1024 bytes; pass an empty string to remove the data. If omitted, then the data isn't changed."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editSharedWidgetData": {
@@ -2478,6 +2651,9 @@
           "required": false,
           "description": "The maximum amount of time in seconds that the public data of the widget may be cached client-side; 5-3600. If omitted, then the current value is kept, which is 30 by default."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "editStory": {
@@ -2543,6 +2719,9 @@
           "required": false,
           "description": "A JSON-serialized list of clickable areas to be shown on the story"
         }
+      ],
+      "returns": [
+        "Story"
       ]
     },
     "editUserStarSubscription": {
@@ -2576,6 +2755,9 @@
           "required": true,
           "description": "Pass True to cancel extension of the user subscription; the subscription must be active up to the end of the current subscription period. Pass False to allow the user to re-enable a subscription that was previously canceled by the bot."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "exportChatInviteLink": {
@@ -2594,6 +2776,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target channel in the format @username"
         }
+      ],
+      "returns": [
+        "String"
       ]
     },
     "forwardMessage": {
@@ -2685,6 +2870,9 @@
           "required": true,
           "description": "Message identifier in the chat specified in from_chat_id"
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "forwardMessages": {
@@ -2752,6 +2940,9 @@
           "required": false,
           "description": "Protects the contents of the forwarded messages from forwarding and saving"
         }
+      ],
+      "returns": [
+        "Array of MessageId"
       ]
     },
     "getAvailableGifts": {
@@ -2760,7 +2951,10 @@
       "description": [
         "Returns the list of gifts that can be sent by the bot to users and channel chats. Requires no parameters. Returns a Gifts object."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "Gifts"
+      ]
     },
     "getBusinessAccountGifts": {
       "name": "getBusinessAccountGifts",
@@ -2857,6 +3051,9 @@
           "required": false,
           "description": "The maximum number of gifts to be returned; 1-100. Defaults to 100."
         }
+      ],
+      "returns": [
+        "OwnedGifts"
       ]
     },
     "getBusinessAccountStarBalance": {
@@ -2874,6 +3071,9 @@
           "required": true,
           "description": "Unique identifier of the business connection"
         }
+      ],
+      "returns": [
+        "StarAmount"
       ]
     },
     "getBusinessConnection": {
@@ -2891,6 +3091,9 @@
           "required": true,
           "description": "Unique identifier of the business connection"
         }
+      ],
+      "returns": [
+        "BusinessConnection"
       ]
     },
     "getChat": {
@@ -2909,6 +3112,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup or channel in the format @username"
         }
+      ],
+      "returns": [
+        "ChatFullInfo"
       ]
     },
     "getChatAdministrators": {
@@ -2935,6 +3141,9 @@
           "required": false,
           "description": "Pass True to additionally receive all bots that are administrators of the chat. By default, bots other than the current bot are omitted."
         }
+      ],
+      "returns": [
+        "Array of ChatMember"
       ]
     },
     "getChatGifts": {
@@ -3033,6 +3242,9 @@
           "required": false,
           "description": "The maximum number of gifts to be returned; 1-100. Defaults to 100."
         }
+      ],
+      "returns": [
+        "OwnedGifts"
       ]
     },
     "getChatMember": {
@@ -3059,6 +3271,9 @@
           "required": true,
           "description": "Unique identifier of the target user"
         }
+      ],
+      "returns": [
+        "ChatMember"
       ]
     },
     "getChatMemberCount": {
@@ -3077,6 +3292,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup or channel in the format @username"
         }
+      ],
+      "returns": [
+        "Integer"
       ]
     },
     "getChatMenuButton": {
@@ -3094,6 +3312,9 @@
           "required": false,
           "description": "Unique identifier for the target private chat. If not specified, the bot's default menu button will be returned."
         }
+      ],
+      "returns": [
+        "MenuButton"
       ]
     },
     "getChatShareThemeBackdrops": {
@@ -3102,7 +3323,10 @@
       "description": [
         "Use this method to get the list of backdrops, which can be used as the background of a theme of the screen for sharing a link to a user or a chat. Requires no parameters. Returns a ChatShareThemeBackdrops object."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "ChatShareThemeBackdrops"
+      ]
     },
     "getCustomEmojiStickers": {
       "name": "getCustomEmojiStickers",
@@ -3119,6 +3343,9 @@
           "required": true,
           "description": "A JSON-serialized list of custom emoji identifiers. At most 200 custom emoji identifiers can be specified."
         }
+      ],
+      "returns": [
+        "Array of Sticker"
       ]
     },
     "getFile": {
@@ -3136,6 +3363,9 @@
           "required": true,
           "description": "File identifier to get information about"
         }
+      ],
+      "returns": [
+        "File"
       ]
     },
     "getForumTopicIconStickers": {
@@ -3144,7 +3374,10 @@
       "description": [
         "Use this method to get custom emoji stickers, which can be used as a forum topic icon by any user. Requires no parameters. Returns an Array of Sticker objects."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "Array of Sticker"
+      ]
     },
     "getGameHighScores": {
       "name": "getGameHighScores",
@@ -3185,6 +3418,9 @@
           "required": false,
           "description": "Required if chat_id and message_id are not specified. Identifier of the inline message."
         }
+      ],
+      "returns": [
+        "Array of GameHighScore"
       ]
     },
     "getManagedBotAccessSettings": {
@@ -3202,6 +3438,9 @@
           "required": true,
           "description": "User identifier of the managed bot whose access settings will be returned"
         }
+      ],
+      "returns": [
+        "BotAccessSettings"
       ]
     },
     "getManagedBotToken": {
@@ -3219,6 +3458,9 @@
           "required": true,
           "description": "User identifier of the managed bot whose token will be returned"
         }
+      ],
+      "returns": [
+        "String"
       ]
     },
     "getMe": {
@@ -3227,7 +3469,10 @@
       "description": [
         "A simple method for testing your bot's authentication token. Requires no parameters. Returns information about the bot in the form of a BotFullInfo object."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "BotFullInfo"
+      ]
     },
     "getMyCommands": {
       "name": "getMyCommands",
@@ -3252,6 +3497,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code or an empty string"
         }
+      ],
+      "returns": [
+        "Array of BotCommand"
       ]
     },
     "getMyDefaultAdministratorRights": {
@@ -3269,6 +3517,9 @@
           "required": false,
           "description": "Pass True to get the default administrator rights of the bot in channels. Otherwise, the default administrator rights of the bot for groups and supergroups will be returned."
         }
+      ],
+      "returns": [
+        "ChatAdministratorRights"
       ]
     },
     "getMyDescription": {
@@ -3286,6 +3537,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code or an empty string"
         }
+      ],
+      "returns": [
+        "BotDescription"
       ]
     },
     "getMyName": {
@@ -3303,6 +3557,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code or an empty string"
         }
+      ],
+      "returns": [
+        "BotName"
       ]
     },
     "getMyShortDescription": {
@@ -3320,6 +3577,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code or an empty string"
         }
+      ],
+      "returns": [
+        "BotShortDescription"
       ]
     },
     "getMyStarBalance": {
@@ -3328,7 +3588,10 @@
       "description": [
         "A method to get the current Telegram Stars balance of the bot. Requires no parameters. On success, returns a StarAmount object."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "StarAmount"
+      ]
     },
     "getStarTransactions": {
       "name": "getStarTransactions",
@@ -3353,6 +3616,9 @@
           "required": false,
           "description": "The maximum number of transactions to be retrieved. Values between 1-100 are accepted. Defaults to 100."
         }
+      ],
+      "returns": [
+        "StarTransactions"
       ]
     },
     "getStickerSet": {
@@ -3370,6 +3636,9 @@
           "required": true,
           "description": "Name of the sticker set"
         }
+      ],
+      "returns": [
+        "StickerSet"
       ]
     },
     "getUniqueGift": {
@@ -3387,6 +3656,9 @@
           "required": true,
           "description": "Unique name of the gift"
         }
+      ],
+      "returns": [
+        "UniqueGift"
       ]
     },
     "getUpdates": {
@@ -3428,6 +3700,9 @@
           "required": false,
           "description": "A JSON-serialized list of the update types you want your bot to receive. For example, specify [\"message\", \"edited_channel_post\", \"callback_query\"] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except chat_member , message_reaction , and message_reaction_count (default). If not specified, the previous setting will be used. Please note that this parameter doesn't affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time."
         }
+      ],
+      "returns": [
+        "Array of Update"
       ]
     },
     "getUserChatBoosts": {
@@ -3454,6 +3729,9 @@
           "required": true,
           "description": "Unique identifier of the target user"
         }
+      ],
+      "returns": [
+        "UserChatBoosts"
       ]
     },
     "getUserGifts": {
@@ -3535,6 +3813,9 @@
           "required": false,
           "description": "The maximum number of gifts to be returned; 1-100. Defaults to 100."
         }
+      ],
+      "returns": [
+        "OwnedGifts"
       ]
     },
     "getUserPersonalChatMessages": {
@@ -3560,6 +3841,9 @@
           "required": true,
           "description": "The maximum number of messages to return; 1-20"
         }
+      ],
+      "returns": [
+        "Array of Message"
       ]
     },
     "getUserProfileAudios": {
@@ -3593,6 +3877,9 @@
           "required": false,
           "description": "Limits the number of audios to be retrieved. Values between 1-100 are accepted. Defaults to 100."
         }
+      ],
+      "returns": [
+        "UserProfileAudios"
       ]
     },
     "getUserProfilePhotos": {
@@ -3626,6 +3913,9 @@
           "required": false,
           "description": "Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100."
         }
+      ],
+      "returns": [
+        "UserProfilePhotos"
       ]
     },
     "getWebhookInfo": {
@@ -3634,7 +3924,10 @@
       "description": [
         "Use this method to get the current webhook status. Requires no parameters. On success, returns a WebhookInfo object. If the bot is using getUpdates , it will return an object with the url field empty."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "WebhookInfo"
+      ]
     },
     "giftPremiumSubscription": {
       "name": "giftPremiumSubscription",
@@ -3691,6 +3984,9 @@
           "required": false,
           "description": "A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of text_parse_mode . Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and “date_time” are ignored."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "hideGeneralForumTopic": {
@@ -3709,6 +4005,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "leaveChat": {
@@ -3727,6 +4026,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup or channel in the format @username . Channel direct messages chats aren't supported; leave the corresponding channel instead."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "logOut": {
@@ -3735,7 +4037,10 @@
       "description": [
         "Use this method to log out from the cloud Bot API server before launching the bot locally. You must log out the bot before running it locally; otherwise, there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log back in to the cloud Bot API server for 10 minutes. Returns True on success. Requires no parameters."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "True"
+      ]
     },
     "pinChatMessage": {
       "name": "pinChatMessage",
@@ -3777,6 +4082,9 @@
           "required": false,
           "description": "Pass True if it is not necessary to send a notification to all chat members about the new pinned message. Notifications are always disabled in channels and private chats."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "postStory": {
@@ -3858,6 +4166,9 @@
           "required": false,
           "description": "Pass True if the content of the story must be protected from forwarding and screenshotting"
         }
+      ],
+      "returns": [
+        "Story"
       ]
     },
     "promoteChatMember": {
@@ -4028,6 +4339,9 @@
           "required": false,
           "description": "Pass True if the administrator can manage chat welcome messages or directly send them in the case of bots"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "readBusinessMessage": {
@@ -4061,6 +4375,9 @@
           "required": true,
           "description": "Unique identifier of the message to mark as read"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "refundStarPayment": {
@@ -4086,6 +4403,9 @@
           "required": true,
           "description": "Telegram payment identifier"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "removeBusinessAccountProfilePhoto": {
@@ -4111,6 +4431,9 @@
           "required": false,
           "description": "Pass True to remove the public photo, which is visible even if the main photo is hidden by the business account's privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "removeChatVerification": {
@@ -4129,6 +4452,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target bot, supergroup, or channel in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "removeMyProfilePhoto": {
@@ -4137,7 +4463,10 @@
       "description": [
         "Removes the profile photo of the bot. Requires no parameters. Returns True on success."
       ],
-      "fields": null
+      "fields": null,
+      "returns": [
+        "True"
+      ]
     },
     "removeUserVerification": {
       "name": "removeUserVerification",
@@ -4154,6 +4483,9 @@
           "required": true,
           "description": "Unique identifier of the target user"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "reopenForumTopic": {
@@ -4180,6 +4512,9 @@
           "required": true,
           "description": "Unique identifier for the target message thread of the forum topic"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "reopenGeneralForumTopic": {
@@ -4198,6 +4533,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "replaceManagedBotToken": {
@@ -4215,6 +4553,9 @@
           "required": true,
           "description": "User identifier of the managed bot whose token will be replaced"
         }
+      ],
+      "returns": [
+        "String"
       ]
     },
     "replaceStickerInSet": {
@@ -4256,6 +4597,9 @@
           "required": true,
           "description": "A JSON-serialized object with information about the added sticker. If exactly the same sticker had already been added to the set, then the set remains unchanged."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "repostStory": {
@@ -4313,6 +4657,9 @@
           "required": false,
           "description": "Pass True if the content of the story must be protected from forwarding and screenshotting"
         }
+      ],
+      "returns": [
+        "Story"
       ]
     },
     "restrictChatMember": {
@@ -4363,6 +4710,9 @@
           "required": false,
           "description": "Date when restrictions will be lifted for the user; Unix time. If the user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "revokeChatInviteLink": {
@@ -4389,6 +4739,9 @@
           "required": true,
           "description": "The invite link to revoke"
         }
+      ],
+      "returns": [
+        "ChatInviteLink"
       ]
     },
     "savePreparedInlineMessage": {
@@ -4446,6 +4799,9 @@
           "required": false,
           "description": "Pass True if the message can be sent to channel chats"
         }
+      ],
+      "returns": [
+        "PreparedInlineMessage"
       ]
     },
     "savePreparedKeyboardButton": {
@@ -4471,6 +4827,9 @@
           "required": true,
           "description": "A JSON-serialized object describing the button to be saved. The button must be of the type request_users , request_chat , or request_managed_bot ."
         }
+      ],
+      "returns": [
+        "PreparedKeyboardButton"
       ]
     },
     "sendAnimation": {
@@ -4662,6 +5021,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendAudio": {
@@ -4837,6 +5199,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendChatAction": {
@@ -4879,6 +5244,9 @@
           "required": true,
           "description": "Type of action to broadcast. Choose one, depending on what the user is about to receive: typing for text messages , upload_photo for photos , record_video or upload_video for videos , record_voice or upload_voice for voice notes , upload_document for general files , choose_sticker for stickers , find_location for location data , record_video_note or upload_video_note for video notes ."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "sendChatJoinRequestWebApp": {
@@ -4904,6 +5272,9 @@
           "required": true,
           "description": "An HTTPS URL of a Web App to be opened with additional data as specified in Initializing Web Apps"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "sendChecklist": {
@@ -4978,6 +5349,9 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard"
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendContact": {
@@ -5119,6 +5493,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendDice": {
@@ -5228,6 +5605,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendDocument": {
@@ -5387,6 +5767,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendGame": {
@@ -5477,6 +5860,9 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard . If empty, one 'Play game_title' button will be shown. If not empty, the first button must launch the game."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendGift": {
@@ -5543,6 +5929,9 @@
           "required": false,
           "description": "A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of text_parse_mode . Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and “date_time” are ignored."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "sendInvoice": {
@@ -5801,6 +6190,9 @@
           "required": false,
           "description": "A JSON-serialized object for an inline keyboard . If empty, one 'Pay total price ' button will be shown. If not empty, the first button must be a Pay button."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendLivePhoto": {
@@ -5968,6 +6360,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendLocation": {
@@ -6125,6 +6520,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendMediaGroup": {
@@ -6219,6 +6617,9 @@
           "required": false,
           "description": "Description of the message to reply to"
         }
+      ],
+      "returns": [
+        "Array of Message"
       ]
     },
     "sendMessage": {
@@ -6360,6 +6761,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendMessageDraft": {
@@ -6433,6 +6837,9 @@
           "required": false,
           "description": "Pass True to keep the draft in the chat when the button is pressed. The draft will still disappear after a short time or if the bot sends a message. To fully preserve the partial draft, the bot should send it as a new message."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "sendPaidMedia": {
@@ -6582,6 +6989,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendPhoto": {
@@ -6740,6 +7150,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendPoll": {
@@ -7025,6 +7438,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendRichMessage": {
@@ -7142,6 +7558,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendRichMessageDraft": {
@@ -7199,6 +7618,9 @@
           "required": false,
           "description": "Pass True to keep the draft in the chat when the button is pressed. The draft will still disappear after a short time or if the bot sends a message. To fully preserve the partial draft, the bot should send it as a new message."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "sendSharedWidget": {
@@ -7324,6 +7746,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendSticker": {
@@ -7450,6 +7875,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendVenue": {
@@ -7623,6 +8051,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendVideo": {
@@ -7839,6 +8270,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendVideoNote": {
@@ -7982,6 +8416,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendVoice": {
@@ -8132,6 +8569,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "sendWidget": {
@@ -8297,6 +8737,9 @@
           "required": false,
           "description": "Additional interface options. A JSON-serialized object for an inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to force a reply from the user."
         }
+      ],
+      "returns": [
+        "Message"
       ]
     },
     "setBusinessAccountBio": {
@@ -8322,6 +8765,9 @@
           "required": false,
           "description": "The new value of the bio for the business account; 0-140 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setBusinessAccountGiftSettings": {
@@ -8355,6 +8801,9 @@
           "required": true,
           "description": "Types of gifts accepted by the business account"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setBusinessAccountName": {
@@ -8388,6 +8837,9 @@
           "required": false,
           "description": "The new value of the last name for the business account; 0-64 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setBusinessAccountProfilePhoto": {
@@ -8421,6 +8873,9 @@
           "required": false,
           "description": "Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account's privacy settings. An account can have only one public photo."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setBusinessAccountUsername": {
@@ -8446,6 +8901,9 @@
           "required": false,
           "description": "The new value of the username for the business account; 0-32 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatAdministratorCustomTitle": {
@@ -8480,6 +8938,9 @@
           "required": true,
           "description": "New custom title for the administrator; 0-16 characters, emoji are not allowed"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatDescription": {
@@ -8506,6 +8967,9 @@
           "required": false,
           "description": "New chat description, 0-255 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatMemberTag": {
@@ -8540,6 +9004,9 @@
           "required": false,
           "description": "New tag for the member; 0-16 characters, emoji are not allowed"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatMenuButton": {
@@ -8565,6 +9032,9 @@
           "required": false,
           "description": "A JSON-serialized object for the bot's new menu button. Defaults to MenuButtonDefault ."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatPermissions": {
@@ -8599,6 +9069,9 @@
           "required": false,
           "description": "Pass True if chat permissions are set independently. Otherwise, the can_send_other_messages and can_add_web_page_previews permissions will imply the can_send_messages , can_send_audios , can_send_documents , can_send_photos , can_send_videos , can_send_video_notes , and can_send_voice_notes permissions; the can_send_polls permission will imply the can_send_messages permission."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatPhoto": {
@@ -8625,6 +9098,9 @@
           "required": true,
           "description": "New chat photo, uploaded using multipart/form-data"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatStickerSet": {
@@ -8651,6 +9127,9 @@
           "required": true,
           "description": "Name of the sticker set to be set as the group sticker set"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setChatTitle": {
@@ -8677,6 +9156,9 @@
           "required": true,
           "description": "New chat title, 1-128 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setCustomEmojiStickerSetThumbnail": {
@@ -8702,6 +9184,9 @@
           "required": false,
           "description": "Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setGameScore": {
@@ -8767,6 +9252,10 @@
           "required": false,
           "description": "Required if chat_id and message_id are not specified. Identifier of the inline message."
         }
+      ],
+      "returns": [
+        "Message",
+        "True"
       ]
     },
     "setManagedBotAccessSettings": {
@@ -8800,6 +9289,9 @@
           "required": false,
           "description": "A JSON-serialized list of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if is_access_restricted is False ."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMessageReaction": {
@@ -8842,6 +9334,9 @@
           "required": false,
           "description": "Pass True to set the reaction with a big animation"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMyCommands": {
@@ -8875,6 +9370,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMyDefaultAdministratorRights": {
@@ -8900,6 +9398,9 @@
           "required": false,
           "description": "Pass True to change the default administrator rights of the bot in channels. Otherwise, the default administrator rights of the bot for groups and supergroups will be changed."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMyDescription": {
@@ -8925,6 +9426,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code. If empty, the description will be applied to all users for whose language there is no dedicated description."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMyName": {
@@ -8950,6 +9454,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code. If empty, the name will be shown to all users for whose language there is no dedicated name."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMyProfilePhoto": {
@@ -8967,6 +9474,9 @@
           "required": true,
           "description": "The new profile photo to set"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMySettings": {
@@ -9096,6 +9606,9 @@
           "required": false,
           "description": "Mode in which the bot receives callback queries from buttons in messages sent by the bot. Must be one of “default” (the field message is always used and contains an InaccessibleMessage if the message is inaccessible to the bot), “auto” (the field inline_message_id is used instead of the field message if the message is inaccessible to the bot; the field message can still contain an inaccessible message if the message has just been deleted), or “inline” (the field inline_message_id is always used instead of the field message )."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setMyShortDescription": {
@@ -9121,6 +9634,9 @@
           "required": false,
           "description": "A two-letter ISO 639-1 language code. If empty, the short description will be applied to all users for whose language there is no dedicated short description."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setPassportDataErrors": {
@@ -9146,6 +9662,9 @@
           "required": true,
           "description": "A JSON-serialized Array describing the errors"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setStickerEmojiList": {
@@ -9171,6 +9690,9 @@
           "required": true,
           "description": "A JSON-serialized list of 1-20 emoji associated with the sticker"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setStickerKeywords": {
@@ -9196,6 +9718,9 @@
           "required": false,
           "description": "A JSON-serialized list of 0-20 search keywords for the sticker with a total length of up to 64 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setStickerMaskPosition": {
@@ -9221,6 +9746,9 @@
           "required": false,
           "description": "A JSON-serialized object with the position where the mask should be placed on faces. Omit the parameter to remove the mask position."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setStickerPositionInSet": {
@@ -9246,6 +9774,9 @@
           "required": true,
           "description": "New sticker position in the set, zero-based"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setStickerSetThumbnail": {
@@ -9288,6 +9819,9 @@
           "required": true,
           "description": "Format of the thumbnail, must be one of “static” for a .WEBP or .PNG image, “animated” for a .TGS animation, or “video” for a .WEBM video"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setStickerSetTitle": {
@@ -9313,6 +9847,9 @@
           "required": true,
           "description": "Sticker set title, 1-64 characters"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setUserEmojiStatus": {
@@ -9346,6 +9883,9 @@
           "required": false,
           "description": "Expiration date of the emoji status, if any"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "setWebhook": {
@@ -9411,6 +9951,9 @@
           "required": false,
           "description": "A secret token to be sent in a header “X-Telegram-Bot-Api-Secret-Token” in every webhook request, 1-256 characters. Only characters A-Z , a-z , 0-9 , _ and - are allowed. The header is useful to ensure that the request comes from a webhook set by you."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "stopMessageLiveLocation": {
@@ -9461,6 +10004,10 @@
           "required": false,
           "description": "A JSON-serialized object for a new inline keyboard"
         }
+      ],
+      "returns": [
+        "Message",
+        "True"
       ]
     },
     "stopPoll": {
@@ -9503,6 +10050,9 @@
           "required": false,
           "description": "A JSON-serialized object for a new message inline keyboard"
         }
+      ],
+      "returns": [
+        "Poll"
       ]
     },
     "transferBusinessAccountStars": {
@@ -9528,6 +10078,9 @@
           "required": true,
           "description": "Number of Telegram Stars to transfer; 1-10000"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "transferGift": {
@@ -9569,6 +10122,9 @@
           "required": false,
           "description": "The amount of Telegram Stars that will be paid for the transfer from the business account balance. If positive, then the can_transfer_stars business bot right is required."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "unbanChatMember": {
@@ -9603,6 +10159,9 @@
           "required": false,
           "description": "Do nothing if the user is not banned"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "unbanChatSenderChat": {
@@ -9629,6 +10188,9 @@
           "required": true,
           "description": "Unique identifier of the target sender chat"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "unhideGeneralForumTopic": {
@@ -9647,6 +10209,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "unpinAllChatMessages": {
@@ -9665,6 +10230,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target channel in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "unpinAllForumTopicMessages": {
@@ -9691,6 +10259,9 @@
           "required": true,
           "description": "Unique identifier for the target message thread of the forum topic"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "unpinAllGeneralForumTopicMessages": {
@@ -9709,6 +10280,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username"
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "unpinChatMessage": {
@@ -9743,6 +10317,9 @@
           "required": false,
           "description": "Identifier of the message to unpin. Required if business_connection_id is specified. If not specified, the most recent pinned message (by sending date) will be unpinned."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "upgradeGift": {
@@ -9784,6 +10361,9 @@
           "required": false,
           "description": "The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If gift.prepaid_upgrade_star_count \u003e 0 , then pass 0; otherwise, the can_transfer_stars business bot right is required and gift.upgrade_star_count must be passed."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "uploadStickerFile": {
@@ -9817,6 +10397,9 @@
           "required": true,
           "description": "Format of the sticker, must be one of “static”, “animated”, “video”"
         }
+      ],
+      "returns": [
+        "File"
       ]
     },
     "verifyChat": {
@@ -9859,6 +10442,9 @@
           "required": false,
           "description": "A JSON-serialized list of special entities that appear in the custom description, which can be specified instead of custom_description_parse_mode . Only “text_link” entities are supported."
         }
+      ],
+      "returns": [
+        "True"
       ]
     },
     "verifyUser": {
@@ -9900,6 +10486,9 @@
           "required": false,
           "description": "A JSON-serialized list of special entities that appear in the custom description, which can be specified instead of custom_description_parse_mode . Only “text_link” entities are supported."
         }
+      ],
+      "returns": [
+        "True"
       ]
     }
   },
@@ -10227,7 +10816,12 @@
       "description": [
         "This object describes the way a background is filled based on the selected colors. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "BackgroundFillSolid",
+        "BackgroundFillGradient",
+        "BackgroundFillFreeformGradient"
+      ]
     },
     "BackgroundFillFreeformGradient": {
       "name": "BackgroundFillFreeformGradient",
@@ -10252,6 +10846,9 @@
           "required": true,
           "description": "A list of the 3 or 4 base colors that are used to generate the freeform gradient in the RGB24 format"
         }
+      ],
+      "subtype_of": [
+        "BackgroundFill"
       ]
     },
     "BackgroundFillGradient": {
@@ -10293,6 +10890,9 @@
           "required": true,
           "description": "Clockwise rotation angle of the background fill in degrees; 0-359"
         }
+      ],
+      "subtype_of": [
+        "BackgroundFill"
       ]
     },
     "BackgroundFillSolid": {
@@ -10318,6 +10918,9 @@
           "required": true,
           "description": "The color of the background fill in the RGB24 format"
         }
+      ],
+      "subtype_of": [
+        "BackgroundFill"
       ]
     },
     "BackgroundType": {
@@ -10326,7 +10929,13 @@
       "description": [
         "This object describes the type of a background. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "BackgroundTypeFill",
+        "BackgroundTypeWallpaper",
+        "BackgroundTypePattern",
+        "BackgroundTypeChatTheme"
+      ]
     },
     "BackgroundTypeChatTheme": {
       "name": "BackgroundTypeChatTheme",
@@ -10351,6 +10960,9 @@
           "required": true,
           "description": "Name of the chat theme, which is usually an emoji"
         }
+      ],
+      "subtype_of": [
+        "BackgroundType"
       ]
     },
     "BackgroundTypeFill": {
@@ -10384,6 +10996,9 @@
           "required": true,
           "description": "Dimming of the background in dark themes, as a percentage; 0-100"
         }
+      ],
+      "subtype_of": [
+        "BackgroundType"
       ]
     },
     "BackgroundTypePattern": {
@@ -10441,6 +11056,9 @@
           "required": false,
           "description": "Optional . True , if the background moves slightly when the device is tilted"
         }
+      ],
+      "subtype_of": [
+        "BackgroundType"
       ]
     },
     "BackgroundTypeWallpaper": {
@@ -10490,6 +11108,9 @@
           "required": false,
           "description": "Optional . True , if the background moves slightly when the device is tilted"
         }
+      ],
+      "subtype_of": [
+        "BackgroundType"
       ]
     },
     "Birthdate": {
@@ -10589,7 +11210,16 @@
       "description": [
         "This object represents the scope to which bot commands are applied. Currently, the following 7 scopes are supported:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "BotCommandScopeDefault",
+        "BotCommandScopeAllPrivateChats",
+        "BotCommandScopeAllGroupChats",
+        "BotCommandScopeAllChatAdministrators",
+        "BotCommandScopeChat",
+        "BotCommandScopeChatAdministrators",
+        "BotCommandScopeChatMember"
+      ]
     },
     "BotCommandScopeAllChatAdministrators": {
       "name": "BotCommandScopeAllChatAdministrators",
@@ -10606,6 +11236,9 @@
           "required": true,
           "description": "Scope type, must be all_chat_administrators"
         }
+      ],
+      "subtype_of": [
+        "BotCommandScope"
       ]
     },
     "BotCommandScopeAllGroupChats": {
@@ -10623,6 +11256,9 @@
           "required": true,
           "description": "Scope type, must be all_group_chats"
         }
+      ],
+      "subtype_of": [
+        "BotCommandScope"
       ]
     },
     "BotCommandScopeAllPrivateChats": {
@@ -10640,6 +11276,9 @@
           "required": true,
           "description": "Scope type, must be all_private_chats"
         }
+      ],
+      "subtype_of": [
+        "BotCommandScope"
       ]
     },
     "BotCommandScopeChat": {
@@ -10666,6 +11305,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username . Channel direct messages chats and channel chats aren't supported."
         }
+      ],
+      "subtype_of": [
+        "BotCommandScope"
       ]
     },
     "BotCommandScopeChatAdministrators": {
@@ -10692,6 +11334,9 @@
           "required": true,
           "description": "Unique identifier for the target chat or username of the target supergroup in the format @username . Channel direct messages chats and channel chats aren't supported."
         }
+      ],
+      "subtype_of": [
+        "BotCommandScope"
       ]
     },
     "BotCommandScopeChatMember": {
@@ -10726,6 +11371,9 @@
           "required": true,
           "description": "Unique identifier of the target user"
         }
+      ],
+      "subtype_of": [
+        "BotCommandScope"
       ]
     },
     "BotCommandScopeDefault": {
@@ -10743,6 +11391,9 @@
           "required": true,
           "description": "Scope type, must be default"
         }
+      ],
+      "subtype_of": [
+        "BotCommandScope"
       ]
     },
     "BotDescription": {
@@ -11722,7 +12373,12 @@
       "description": [
         "This object describes the source of a chat boost. It can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "ChatBoostSourcePremium",
+        "ChatBoostSourceGiftCode",
+        "ChatBoostSourceGiveaway"
+      ]
     },
     "ChatBoostSourceGiftCode": {
       "name": "ChatBoostSourceGiftCode",
@@ -11747,6 +12403,9 @@
           "required": true,
           "description": "User for whom the gift code was created"
         }
+      ],
+      "subtype_of": [
+        "ChatBoostSource"
       ]
     },
     "ChatBoostSourceGiveaway": {
@@ -11796,6 +12455,9 @@
           "required": false,
           "description": "Optional . True , if the giveaway was completed, but there was no user to win the prize"
         }
+      ],
+      "subtype_of": [
+        "ChatBoostSource"
       ]
     },
     "ChatBoostSourcePremium": {
@@ -11821,6 +12483,9 @@
           "required": true,
           "description": "User that boosted the chat"
         }
+      ],
+      "subtype_of": [
+        "ChatBoostSource"
       ]
     },
     "ChatBoostUpdated": {
@@ -12490,7 +13155,15 @@
       "description": [
         "This object contains information about one member of a chat. Currently, the following 6 types of chat members are supported:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "ChatMemberOwner",
+        "ChatMemberAdministrator",
+        "ChatMemberMember",
+        "ChatMemberRestricted",
+        "ChatMemberLeft",
+        "ChatMemberBanned"
+      ]
     },
     "ChatMemberAdministrator": {
       "name": "ChatMemberAdministrator",
@@ -12675,6 +13348,9 @@
           "required": false,
           "description": "Optional . Custom title for this user"
         }
+      ],
+      "subtype_of": [
+        "ChatMember"
       ]
     },
     "ChatMemberBanned": {
@@ -12708,6 +13384,9 @@
           "required": true,
           "description": "Date when restrictions will be lifted for this user; Unix time. If 0, then the user is banned forever."
         }
+      ],
+      "subtype_of": [
+        "ChatMember"
       ]
     },
     "ChatMemberLeft": {
@@ -12733,6 +13412,9 @@
           "required": true,
           "description": "Information about the user"
         }
+      ],
+      "subtype_of": [
+        "ChatMember"
       ]
     },
     "ChatMemberMember": {
@@ -12774,6 +13456,9 @@
           "required": false,
           "description": "Optional . Date when the user's subscription will expire; Unix time"
         }
+      ],
+      "subtype_of": [
+        "ChatMember"
       ]
     },
     "ChatMemberOwner": {
@@ -12815,6 +13500,9 @@
           "required": false,
           "description": "Optional . Custom title for this user"
         }
+      ],
+      "subtype_of": [
+        "ChatMember"
       ]
     },
     "ChatMemberRestricted": {
@@ -12992,6 +13680,9 @@
           "required": true,
           "description": "Date when restrictions will be lifted for this user; Unix time. If 0, then the user is restricted forever."
         }
+      ],
+      "subtype_of": [
+        "ChatMember"
       ]
     },
     "ChatMemberUpdated": {
@@ -13285,7 +13976,11 @@
       "description": [
         "This object describes the theme of the screen for sharing a link to a user or a chat. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "ChatShareThemeEmoji",
+        "ChatShareThemeUniqueGift"
+      ]
     },
     "ChatShareThemeBackdrop": {
       "name": "ChatShareThemeBackdrop",
@@ -13368,6 +14063,9 @@
           "required": false,
           "description": "Optional . Identifier of the backdrop used as the background; omitted if the default background is used. Use getChatShareThemeBackdrops to get details about the backdrop."
         }
+      ],
+      "subtype_of": [
+        "ChatShareTheme"
       ]
     },
     "ChatShareThemeUniqueGift": {
@@ -13393,6 +14091,9 @@
           "required": true,
           "description": "The gift"
         }
+      ],
+      "subtype_of": [
+        "ChatShareTheme"
       ]
     },
     "ChatShared": {
@@ -13936,7 +14637,11 @@
       "description": [
         "This object describes an emoji. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "EmojiTypeEmoji",
+        "EmojiTypeCustomEmoji"
+      ]
     },
     "EmojiTypeCustomEmoji": {
       "name": "EmojiTypeCustomEmoji",
@@ -13961,6 +14666,9 @@
           "required": true,
           "description": "Identifier of the custom emoji. Use getCustomEmojiStickers to get full information about the sticker."
         }
+      ],
+      "subtype_of": [
+        "EmojiType"
       ]
     },
     "EmojiTypeEmoji": {
@@ -13986,6 +14694,9 @@
           "required": true,
           "description": "The emoji"
         }
+      ],
+      "subtype_of": [
+        "EmojiType"
       ]
     },
     "EncryptedCredentials": {
@@ -15206,6 +15917,9 @@
           "required": true,
           "description": "Always 0. The field can be used to differentiate regular and inaccessible messages."
         }
+      ],
+      "subtype_of": [
+        "MaybeInaccessibleMessage"
       ]
     },
     "InlineKeyboardButton": {
@@ -15417,7 +16131,29 @@
       "description": [
         "This object represents one result of an inline query. Telegram clients currently support results of the following 20 types:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InlineQueryResultCachedAudio",
+        "InlineQueryResultCachedDocument",
+        "InlineQueryResultCachedGif",
+        "InlineQueryResultCachedMpeg4Gif",
+        "InlineQueryResultCachedPhoto",
+        "InlineQueryResultCachedSticker",
+        "InlineQueryResultCachedVideo",
+        "InlineQueryResultCachedVoice",
+        "InlineQueryResultArticle",
+        "InlineQueryResultAudio",
+        "InlineQueryResultContact",
+        "InlineQueryResultGame",
+        "InlineQueryResultDocument",
+        "InlineQueryResultGif",
+        "InlineQueryResultLocation",
+        "InlineQueryResultMpeg4Gif",
+        "InlineQueryResultPhoto",
+        "InlineQueryResultVenue",
+        "InlineQueryResultVideo",
+        "InlineQueryResultVoice"
+      ]
     },
     "InlineQueryResultArticle": {
       "name": "InlineQueryResultArticle",
@@ -15506,6 +16242,9 @@
           "required": false,
           "description": "Optional . Thumbnail height"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultAudio": {
@@ -15603,6 +16342,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the audio"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedAudio": {
@@ -15676,6 +16418,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the audio"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedDocument": {
@@ -15765,6 +16510,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the file"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedGif": {
@@ -15854,6 +16602,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the GIF animation"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedMpeg4Gif": {
@@ -15943,6 +16694,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the video animation"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedPhoto": {
@@ -16040,6 +16794,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the photo"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedSticker": {
@@ -16089,6 +16846,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the sticker"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedVideo": {
@@ -16186,6 +16946,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the video"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultCachedVoice": {
@@ -16267,6 +17030,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the voice message"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultContact": {
@@ -16364,6 +17130,9 @@
           "required": false,
           "description": "Optional . Thumbnail height"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultDocument": {
@@ -16485,6 +17254,9 @@
           "required": false,
           "description": "Optional . Thumbnail height"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultGame": {
@@ -16526,6 +17298,9 @@
           "required": false,
           "description": "Optional . Inline keyboard attached to the message"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultGif": {
@@ -16655,6 +17430,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the GIF animation"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultLocation": {
@@ -16776,6 +17554,9 @@
           "required": false,
           "description": "Optional . Thumbnail height"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultMpeg4Gif": {
@@ -16905,6 +17686,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the video animation"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultPhoto": {
@@ -17026,6 +17810,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the photo"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultVenue": {
@@ -17155,6 +17942,9 @@
           "required": false,
           "description": "Optional . Thumbnail height"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultVideo": {
@@ -17292,6 +18082,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the video. This field is required if InlineQueryResultVideo is used to send an HTML page as a result (e.g., a YouTube video)."
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultVoice": {
@@ -17381,6 +18174,9 @@
           "required": false,
           "description": "Optional . Content of the message to be sent instead of the voice recording"
         }
+      ],
+      "subtype_of": [
+        "InlineQueryResult"
       ]
     },
     "InlineQueryResultsButton": {
@@ -17553,6 +18349,9 @@
           "required": false,
           "description": "Optional . Additional data about the contact in the form of a vCard , 0-2048 bytes"
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "InputFile": {
@@ -17730,6 +18529,9 @@
           "required": false,
           "description": "Optional . Pass True if the final price depends on the shipping method. Ignored for payments in Telegram Stars ."
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "InputLocationMessageContent": {
@@ -17787,6 +18589,9 @@
           "required": false,
           "description": "Optional . For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified."
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "InputMedia": {
@@ -17795,7 +18600,15 @@
       "description": [
         "This object represents the content of a media message to be sent. It should be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputMediaAnimation",
+        "InputMediaAudio",
+        "InputMediaDocument",
+        "InputMediaLivePhoto",
+        "InputMediaPhoto",
+        "InputMediaVideo"
+      ]
     },
     "InputMediaAnimation": {
       "name": "InputMediaAnimation",
@@ -17892,6 +18705,11 @@
           "required": false,
           "description": "Optional . Pass True if the animation needs to be covered with a spoiler animation"
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputPollOptionMedia",
+        "InputMedia"
       ]
     },
     "InputMediaAudio": {
@@ -17973,6 +18791,10 @@
           "required": false,
           "description": "Optional . Title of the audio"
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputMedia"
       ]
     },
     "InputMediaDocument": {
@@ -18038,6 +18860,10 @@
           "required": false,
           "description": "Optional . Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always True , if the document is sent as part of an album."
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputMedia"
       ]
     },
     "InputMediaLink": {
@@ -18063,6 +18889,9 @@
           "required": true,
           "description": "HTTP URL of the link"
         }
+      ],
+      "subtype_of": [
+        "InputPollOptionMedia"
       ]
     },
     "InputMediaLivePhoto": {
@@ -18136,6 +18965,11 @@
           "required": false,
           "description": "Optional . Pass True if the live photo needs to be covered with a spoiler animation"
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputPollOptionMedia",
+        "InputMedia"
       ]
     },
     "InputMediaLocation": {
@@ -18177,6 +19011,10 @@
           "required": false,
           "description": "Optional . The radius of uncertainty for the location, measured in meters; 0-1500"
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputPollOptionMedia"
       ]
     },
     "InputMediaPhoto": {
@@ -18242,6 +19080,11 @@
           "required": false,
           "description": "Optional . Pass True if the photo needs to be covered with a spoiler animation"
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputPollOptionMedia",
+        "InputMedia"
       ]
     },
     "InputMediaSticker": {
@@ -18275,6 +19118,9 @@
           "required": false,
           "description": "Optional . Emoji associated with the sticker; only for just uploaded stickers"
         }
+      ],
+      "subtype_of": [
+        "InputPollOptionMedia"
       ]
     },
     "InputMediaVenue": {
@@ -18356,6 +19202,10 @@
           "required": false,
           "description": "Optional . Google Places type of the venue. (See supported types .)"
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputPollOptionMedia"
       ]
     },
     "InputMediaVideo": {
@@ -18477,6 +19327,11 @@
           "required": false,
           "description": "Optional . Pass True if the video needs to be covered with a spoiler animation"
         }
+      ],
+      "subtype_of": [
+        "InputPollMedia",
+        "InputPollOptionMedia",
+        "InputMedia"
       ]
     },
     "InputMediaVoiceNote": {
@@ -18542,7 +19397,17 @@
       "description": [
         "This object represents the content of a message to be sent as a result of an inline query. Telegram clients currently support the following types:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputTextMessageContent",
+        "InputRichMessageContent",
+        "InputLocationMessageContent",
+        "InputVenueMessageContent",
+        "InputContactMessageContent",
+        "InputInvoiceMessageContent",
+        "InputWidgetMessageContent",
+        "InputSharedWidgetMessageContent"
+      ]
     },
     "InputPaidMedia": {
       "name": "InputPaidMedia",
@@ -18550,7 +19415,12 @@
       "description": [
         "This object describes the paid media to be sent. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputPaidMediaLivePhoto",
+        "InputPaidMediaPhoto",
+        "InputPaidMediaVideo"
+      ]
     },
     "InputPaidMediaLivePhoto": {
       "name": "InputPaidMediaLivePhoto",
@@ -18583,6 +19453,9 @@
           "required": true,
           "description": "The static photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended) or pass “attach://\u003cfile_attach_name\u003e” to upload a new one using multipart/form-data under \u003cfile_attach_name\u003e name. More information on Sending Files » . Sending live photos by a URL is currently unsupported."
         }
+      ],
+      "subtype_of": [
+        "InputPaidMedia"
       ]
     },
     "InputPaidMediaPhoto": {
@@ -18608,6 +19481,9 @@
           "required": true,
           "description": "File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://\u003cfile_attach_name\u003e” to upload a new one using multipart/form-data under \u003cfile_attach_name\u003e name. More information on Sending Files »"
         }
+      ],
+      "subtype_of": [
+        "InputPaidMedia"
       ]
     },
     "InputPaidMediaVideo": {
@@ -18689,6 +19565,9 @@
           "required": false,
           "description": "Optional . Pass True if the uploaded video is suitable for streaming"
         }
+      ],
+      "subtype_of": [
+        "InputPaidMedia"
       ]
     },
     "InputPollMedia": {
@@ -18697,7 +19576,17 @@
       "description": [
         "This object represents the content of a poll description or a quiz explanation to be sent. It should be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputMediaAnimation",
+        "InputMediaAudio",
+        "InputMediaDocument",
+        "InputMediaLivePhoto",
+        "InputMediaLocation",
+        "InputMediaPhoto",
+        "InputMediaVenue",
+        "InputMediaVideo"
+      ]
     },
     "InputPollOption": {
       "name": "InputPollOption",
@@ -18746,7 +19635,17 @@
       "description": [
         "This object represents the content of a poll option to be sent. It should be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputMediaAnimation",
+        "InputMediaLink",
+        "InputMediaLivePhoto",
+        "InputMediaLocation",
+        "InputMediaPhoto",
+        "InputMediaSticker",
+        "InputMediaVenue",
+        "InputMediaVideo"
+      ]
     },
     "InputProfilePhoto": {
       "name": "InputProfilePhoto",
@@ -18754,7 +19653,11 @@
       "description": [
         "This object describes a profile photo to set. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputProfilePhotoStatic",
+        "InputProfilePhotoAnimated"
+      ]
     },
     "InputProfilePhotoAnimated": {
       "name": "InputProfilePhotoAnimated",
@@ -18787,6 +19690,9 @@
           "required": false,
           "description": "Optional . Timestamp in seconds of the frame that will be used as the static profile photo. Defaults to 0.0."
         }
+      ],
+      "subtype_of": [
+        "InputProfilePhoto"
       ]
     },
     "InputProfilePhotoStatic": {
@@ -18812,6 +19718,9 @@
           "required": true,
           "description": "The static profile photo. Profile photos can't be reused and can only be uploaded as a new file, so you can pass “attach://\u003cfile_attach_name\u003e” if the photo was uploaded using multipart/form-data under \u003cfile_attach_name\u003e. More information on Sending Files »"
         }
+      ],
+      "subtype_of": [
+        "InputProfilePhoto"
       ]
     },
     "InputRichBlock": {
@@ -18820,7 +19729,33 @@
       "description": [
         "This object represents a block in a rich formatted message to be sent. Currently, it can be any of the following types:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputRichBlockParagraph",
+        "InputRichBlockSectionHeading",
+        "InputRichBlockPreformatted",
+        "InputRichBlockFooter",
+        "InputRichBlockDivider",
+        "InputRichBlockMathematicalExpression",
+        "InputRichBlockAnchor",
+        "InputRichBlockList",
+        "InputRichBlockBlockQuotation",
+        "InputRichBlockExpandableBlockQuotation",
+        "InputRichBlockPullQuotation",
+        "InputRichBlockCollage",
+        "InputRichBlockSlideshow",
+        "InputRichBlockTable",
+        "InputRichBlockDetails",
+        "InputRichBlockMap",
+        "InputRichBlockButtons",
+        "InputRichBlockAnimation",
+        "InputRichBlockAudio",
+        "InputRichBlockDocument",
+        "InputRichBlockPhoto",
+        "InputRichBlockVideo",
+        "InputRichBlockVoiceNote",
+        "InputRichBlockThinking"
+      ]
     },
     "InputRichBlockAnchor": {
       "name": "InputRichBlockAnchor",
@@ -18845,6 +19780,9 @@
           "required": true,
           "description": "The name of the anchor"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockAnimation": {
@@ -18878,6 +19816,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockAudio": {
@@ -18911,6 +19852,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockBlockQuotation": {
@@ -18944,6 +19888,9 @@
           "required": false,
           "description": "Optional . Credit of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockButtons": {
@@ -18977,6 +19924,9 @@
           "required": false,
           "description": "Optional . Horizontal alignment of the buttons. Currently, must be one of “left”, “center”, or “right”."
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockCollage": {
@@ -19010,6 +19960,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockDetails": {
@@ -19051,6 +20004,9 @@
           "required": false,
           "description": "Optional . Pass True if the content of the block is visible by default"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockDivider": {
@@ -19068,6 +20024,9 @@
           "required": true,
           "description": "Type of the block, always “divider”"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockDocument": {
@@ -19101,6 +20060,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockExpandableBlockQuotation": {
@@ -19134,6 +20096,9 @@
           "required": false,
           "description": "Optional . Credit of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockFooter": {
@@ -19159,6 +20124,9 @@
           "required": true,
           "description": "Text of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockList": {
@@ -19184,6 +20152,9 @@
           "required": true,
           "description": "Items of the list"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockListItem": {
@@ -19290,6 +20261,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockMathematicalExpression": {
@@ -19315,6 +20289,9 @@
           "required": true,
           "description": "The mathematical expression in LaTeX format"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockParagraph": {
@@ -19340,6 +20317,9 @@
           "required": true,
           "description": "Text of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockPhoto": {
@@ -19373,6 +20353,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockPreformatted": {
@@ -19406,6 +20389,9 @@
           "required": false,
           "description": "Optional . The programming language of the text"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockPullQuotation": {
@@ -19439,6 +20425,9 @@
           "required": false,
           "description": "Optional . Credit of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockSectionHeading": {
@@ -19472,6 +20461,9 @@
           "required": true,
           "description": "Relative size of the text font; 1-6, 1 is the largest, 6 is the smallest"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockSlideshow": {
@@ -19505,6 +20497,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockTable": {
@@ -19562,6 +20557,9 @@
           "required": false,
           "description": "Optional . Caption of the table"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockThinking": {
@@ -19587,6 +20585,9 @@
           "required": true,
           "description": "Text of the block. See https://t.me/addemoji/AIActions for examples of custom emoji that are recommended for usage in the block."
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockVideo": {
@@ -19620,6 +20621,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichBlockVoiceNote": {
@@ -19653,6 +20657,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "InputRichBlock"
       ]
     },
     "InputRichMessage": {
@@ -19727,6 +20734,9 @@
           "required": true,
           "description": "The message to be sent. Only previously uploaded files may be used in the message."
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "InputRichMessageMedia": {
@@ -19814,6 +20824,9 @@
           "required": false,
           "description": "Optional . Pass True if the caption must be shown above the widget"
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "InputSticker": {
@@ -19871,7 +20884,11 @@
       "description": [
         "This object describes the content of a story to post. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "InputStoryContentPhoto",
+        "InputStoryContentVideo"
+      ]
     },
     "InputStoryContentPhoto": {
       "name": "InputStoryContentPhoto",
@@ -19896,6 +20913,9 @@
           "required": true,
           "description": "The photo to post as a story. The photo must be of the size 1080x1920 and must not exceed 10 MB. The photo can't be reused and can only be uploaded as a new file, so you can pass “attach://\u003cfile_attach_name\u003e” if the photo was uploaded using multipart/form-data under \u003cfile_attach_name\u003e. More information on Sending Files »"
         }
+      ],
+      "subtype_of": [
+        "InputStoryContent"
       ]
     },
     "InputStoryContentVideo": {
@@ -19945,6 +20965,9 @@
           "required": false,
           "description": "Optional . Pass True if the video has no sound"
         }
+      ],
+      "subtype_of": [
+        "InputStoryContent"
       ]
     },
     "InputTextMessageContent": {
@@ -19986,6 +21009,9 @@
           "required": false,
           "description": "Optional . Link preview generation options for the message"
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "InputVenueMessageContent": {
@@ -20059,6 +21085,9 @@
           "required": false,
           "description": "Optional . Google Places type of the venue. (See supported types .)"
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "InputWidgetMessageContent": {
@@ -20156,6 +21185,9 @@
           "required": false,
           "description": "Optional . Pass True to create a shared widget. Each message sent from the result creates a separate shared widget, whose identifier is received by the bot only in the field widget_id of queries from the widget. To send an existing shared widget in response to an inline query, use InputSharedWidgetMessageContent instead."
         }
+      ],
+      "subtype_of": [
+        "InputMessageContent"
       ]
     },
     "Invoice": {
@@ -20900,7 +21932,11 @@
       "description": [
         "This object describes a message that can be inaccessible to the bot. It can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "Message",
+        "InaccessibleMessage"
+      ]
     },
     "MenuButton": {
       "name": "MenuButton",
@@ -20908,7 +21944,12 @@
       "description": [
         "This object describes the bot's menu button in a private chat. It should be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "MenuButtonCommands",
+        "MenuButtonWebApp",
+        "MenuButtonDefault"
+      ]
     },
     "MenuButtonCommands": {
       "name": "MenuButtonCommands",
@@ -20925,6 +21966,9 @@
           "required": true,
           "description": "Type of the button, must be commands"
         }
+      ],
+      "subtype_of": [
+        "MenuButton"
       ]
     },
     "MenuButtonDefault": {
@@ -20942,6 +21986,9 @@
           "required": true,
           "description": "Type of the button, must be default"
         }
+      ],
+      "subtype_of": [
+        "MenuButton"
       ]
     },
     "MenuButtonWebApp": {
@@ -20975,6 +22022,9 @@
           "required": true,
           "description": "Description of the Web App that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method answerWebAppQuery . Alternatively, a t.me link to a Web App of the bot can be specified in the object instead of the Web App's URL, in which case the Web App will be opened as if the user pressed the link."
         }
+      ],
+      "subtype_of": [
+        "MenuButton"
       ]
     },
     "Message": {
@@ -21968,6 +23018,9 @@
           "required": false,
           "description": "Optional . Inline keyboard attached to the message. login_url buttons are represented as ordinary url buttons."
         }
+      ],
+      "subtype_of": [
+        "MaybeInaccessibleMessage"
       ]
     },
     "MessageAutoDeleteTimerChanged": {
@@ -22124,7 +23177,13 @@
       "description": [
         "This object describes the origin of a message. It can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "MessageOriginUser",
+        "MessageOriginHiddenUser",
+        "MessageOriginChat",
+        "MessageOriginChannel"
+      ]
     },
     "MessageOriginChannel": {
       "name": "MessageOriginChannel",
@@ -22173,6 +23232,9 @@
           "required": false,
           "description": "Optional . Signature of the original post author"
         }
+      ],
+      "subtype_of": [
+        "MessageOrigin"
       ]
     },
     "MessageOriginChat": {
@@ -22214,6 +23276,9 @@
           "required": false,
           "description": "Optional . For messages originally sent by an anonymous chat administrator, original message author signature"
         }
+      ],
+      "subtype_of": [
+        "MessageOrigin"
       ]
     },
     "MessageOriginHiddenUser": {
@@ -22247,6 +23312,9 @@
           "required": true,
           "description": "Name of the user that sent the message originally"
         }
+      ],
+      "subtype_of": [
+        "MessageOrigin"
       ]
     },
     "MessageOriginUser": {
@@ -22280,6 +23348,9 @@
           "required": true,
           "description": "User that sent the message originally"
         }
+      ],
+      "subtype_of": [
+        "MessageOrigin"
       ]
     },
     "MessageReactionCountUpdated": {
@@ -22435,7 +23506,11 @@
       "description": [
         "This object describes a gift received and owned by a user or a chat. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "OwnedGiftRegular",
+        "OwnedGiftUnique"
+      ]
     },
     "OwnedGiftRegular": {
       "name": "OwnedGiftRegular",
@@ -22564,6 +23639,9 @@
           "required": false,
           "description": "Optional . Unique number reserved for this gift when upgraded. See the number field in UniqueGift ."
         }
+      ],
+      "subtype_of": [
+        "OwnedGift"
       ]
     },
     "OwnedGiftUnique": {
@@ -22645,6 +23723,9 @@
           "required": false,
           "description": "Optional . Point in time (Unix timestamp) when the gift can be transferred. If it is in the past, then the gift can be transferred now."
         }
+      ],
+      "subtype_of": [
+        "OwnedGift"
       ]
     },
     "OwnedGifts": {
@@ -22686,7 +23767,13 @@
       "description": [
         "This object describes paid media. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "PaidMediaLivePhoto",
+        "PaidMediaPhoto",
+        "PaidMediaPreview",
+        "PaidMediaVideo"
+      ]
     },
     "PaidMediaInfo": {
       "name": "PaidMediaInfo",
@@ -22736,6 +23823,9 @@
           "required": true,
           "description": "The photo"
         }
+      ],
+      "subtype_of": [
+        "PaidMedia"
       ]
     },
     "PaidMediaPhoto": {
@@ -22761,6 +23851,9 @@
           "required": true,
           "description": "The photo"
         }
+      ],
+      "subtype_of": [
+        "PaidMedia"
       ]
     },
     "PaidMediaPreview": {
@@ -22802,6 +23895,9 @@
           "required": false,
           "description": "Optional . Duration of the media in seconds as defined by the sender"
         }
+      ],
+      "subtype_of": [
+        "PaidMedia"
       ]
     },
     "PaidMediaPurchased": {
@@ -22852,6 +23948,9 @@
           "required": true,
           "description": "The video"
         }
+      ],
+      "subtype_of": [
+        "PaidMedia"
       ]
     },
     "PaidMessagePriceChanged": {
@@ -22910,7 +24009,18 @@
       "description": [
         "This object represents an error in the Telegram Passport element which was submitted that should be resolved by the user. It should be one of:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "PassportElementErrorDataField",
+        "PassportElementErrorFrontSide",
+        "PassportElementErrorReverseSide",
+        "PassportElementErrorSelfie",
+        "PassportElementErrorFile",
+        "PassportElementErrorFiles",
+        "PassportElementErrorTranslationFile",
+        "PassportElementErrorTranslationFiles",
+        "PassportElementErrorUnspecified"
+      ]
     },
     "PassportElementErrorDataField": {
       "name": "PassportElementErrorDataField",
@@ -22959,6 +24069,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorFile": {
@@ -23000,6 +24113,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorFiles": {
@@ -23041,6 +24157,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorFrontSide": {
@@ -23082,6 +24201,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorReverseSide": {
@@ -23123,6 +24245,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorSelfie": {
@@ -23164,6 +24289,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorTranslationFile": {
@@ -23205,6 +24333,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorTranslationFiles": {
@@ -23246,6 +24377,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportElementErrorUnspecified": {
@@ -23287,6 +24421,9 @@
           "required": true,
           "description": "Error message"
         }
+      ],
+      "subtype_of": [
+        "PassportElementError"
       ]
     },
     "PassportFile": {
@@ -24020,7 +25157,12 @@
       "description": [
         "This object describes the type of a reaction. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "ReactionTypeEmoji",
+        "ReactionTypeCustomEmoji",
+        "ReactionTypePaid"
+      ]
     },
     "ReactionTypeCustomEmoji": {
       "name": "ReactionTypeCustomEmoji",
@@ -24045,6 +25187,9 @@
           "required": true,
           "description": "Custom emoji identifier"
         }
+      ],
+      "subtype_of": [
+        "ReactionType"
       ]
     },
     "ReactionTypeEmoji": {
@@ -24070,6 +25215,9 @@
           "required": true,
           "description": "Reaction emoji. Currently, it can be one of \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \", \" \"."
         }
+      ],
+      "subtype_of": [
+        "ReactionType"
       ]
     },
     "ReactionTypePaid": {
@@ -24087,6 +25235,9 @@
           "required": true,
           "description": "Type of the reaction, always “paid”"
         }
+      ],
+      "subtype_of": [
+        "ReactionType"
       ]
     },
     "RefundedPayment": {
@@ -24357,7 +25508,12 @@
       "description": [
         "This object describes the state of a revenue withdrawal operation. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "RevenueWithdrawalStatePending",
+        "RevenueWithdrawalStateSucceeded",
+        "RevenueWithdrawalStateFailed"
+      ]
     },
     "RevenueWithdrawalStateFailed": {
       "name": "RevenueWithdrawalStateFailed",
@@ -24374,6 +25530,9 @@
           "required": true,
           "description": "Type of the state, always “failed”"
         }
+      ],
+      "subtype_of": [
+        "RevenueWithdrawalState"
       ]
     },
     "RevenueWithdrawalStatePending": {
@@ -24391,6 +25550,9 @@
           "required": true,
           "description": "Type of the state, always “pending”"
         }
+      ],
+      "subtype_of": [
+        "RevenueWithdrawalState"
       ]
     },
     "RevenueWithdrawalStateSucceeded": {
@@ -24424,6 +25586,9 @@
           "required": true,
           "description": "An HTTPS URL that can be used to see transaction details"
         }
+      ],
+      "subtype_of": [
+        "RevenueWithdrawalState"
       ]
     },
     "RichBlock": {
@@ -24432,7 +25597,33 @@
       "description": [
         "This object represents a block in a rich formatted message. Currently, it can be any of the following types:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "RichBlockParagraph",
+        "RichBlockSectionHeading",
+        "RichBlockPreformatted",
+        "RichBlockFooter",
+        "RichBlockDivider",
+        "RichBlockMathematicalExpression",
+        "RichBlockAnchor",
+        "RichBlockList",
+        "RichBlockBlockQuotation",
+        "RichBlockExpandableBlockQuotation",
+        "RichBlockPullQuotation",
+        "RichBlockCollage",
+        "RichBlockSlideshow",
+        "RichBlockTable",
+        "RichBlockDetails",
+        "RichBlockMap",
+        "RichBlockButtons",
+        "RichBlockAnimation",
+        "RichBlockAudio",
+        "RichBlockDocument",
+        "RichBlockPhoto",
+        "RichBlockVideo",
+        "RichBlockVoiceNote",
+        "RichBlockThinking"
+      ]
     },
     "RichBlockAnchor": {
       "name": "RichBlockAnchor",
@@ -24457,6 +25648,9 @@
           "required": true,
           "description": "The name of the anchor"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockAnimation": {
@@ -24498,6 +25692,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockAudio": {
@@ -24531,6 +25728,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockBlockQuotation": {
@@ -24564,6 +25764,9 @@
           "required": false,
           "description": "Optional . Credit of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockButtons": {
@@ -24597,6 +25800,9 @@
           "required": false,
           "description": "Optional . Horizontal alignment of the buttons. Currently, must be one of “left”, “center”, or “right”."
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockCaption": {
@@ -24655,6 +25861,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockDetails": {
@@ -24696,6 +25905,9 @@
           "required": false,
           "description": "Optional . True , if the content of the block is visible by default"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockDivider": {
@@ -24713,6 +25925,9 @@
           "required": true,
           "description": "Type of the block, always “divider”"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockDocument": {
@@ -24746,6 +25961,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockExpandableBlockQuotation": {
@@ -24779,6 +25997,9 @@
           "required": false,
           "description": "Optional . Credit of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockFooter": {
@@ -24804,6 +26025,9 @@
           "required": true,
           "description": "Text of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockList": {
@@ -24829,6 +26053,9 @@
           "required": true,
           "description": "Items of the list"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockListItem": {
@@ -24943,6 +26170,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockMathematicalExpression": {
@@ -24968,6 +26198,9 @@
           "required": true,
           "description": "The mathematical expression in LaTeX format"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockParagraph": {
@@ -24993,6 +26226,9 @@
           "required": true,
           "description": "Text of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockPhoto": {
@@ -25034,6 +26270,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockPreformatted": {
@@ -25067,6 +26306,9 @@
           "required": false,
           "description": "Optional . The programming language of the text"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockPullQuotation": {
@@ -25100,6 +26342,9 @@
           "required": false,
           "description": "Optional . Credit of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockSectionHeading": {
@@ -25133,6 +26378,9 @@
           "required": true,
           "description": "Relative size of the text font; 1-6, 1 is the largest, 6 is the smallest"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockSlideshow": {
@@ -25166,6 +26414,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockTable": {
@@ -25223,6 +26474,9 @@
           "required": false,
           "description": "Optional . Caption of the table"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockTableCell": {
@@ -25305,6 +26559,9 @@
           "required": true,
           "description": "Text of the block. See https://t.me/addemoji/AIActions for examples of custom emoji that are recommended for usage in the block."
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockVideo": {
@@ -25346,6 +26603,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichBlockVoiceNote": {
@@ -25379,6 +26639,9 @@
           "required": false,
           "description": "Optional . Caption of the block"
         }
+      ],
+      "subtype_of": [
+        "RichBlock"
       ]
     },
     "RichMessage": {
@@ -25509,7 +26772,36 @@
       "description": [
         "This object represents a rich formatted text. Currently, it can be either a String for plain text, an Array of RichText , or any of the following types:"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "RichTextBold",
+        "RichTextItalic",
+        "RichTextUnderline",
+        "RichTextStrikethrough",
+        "RichTextSpoiler",
+        "RichTextDateTime",
+        "RichTextTextMention",
+        "RichTextSubscript",
+        "RichTextSuperscript",
+        "RichTextMarked",
+        "RichTextCode",
+        "RichTextCustomEmoji",
+        "RichTextMathematicalExpression",
+        "RichTextUrl",
+        "RichTextEmailAddress",
+        "RichTextPhoneNumber",
+        "RichTextBankCardNumber",
+        "RichTextTonAddress",
+        "RichTextMention",
+        "RichTextHashtag",
+        "RichTextCashtag",
+        "RichTextBotCommand",
+        "RichTextButton",
+        "RichTextAnchor",
+        "RichTextAnchorLink",
+        "RichTextReference",
+        "RichTextReferenceLink"
+      ]
     },
     "RichTextAnchor": {
       "name": "RichTextAnchor",
@@ -25534,6 +26826,9 @@
           "required": true,
           "description": "The name of the anchor"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextAnchorLink": {
@@ -25567,6 +26862,9 @@
           "required": true,
           "description": "The name of the anchor. If the name is empty, then the link brings the user back to the top of the message."
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextBankCardNumber": {
@@ -25600,6 +26898,9 @@
           "required": true,
           "description": "The bank card number"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextBold": {
@@ -25625,6 +26926,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextBotCommand": {
@@ -25658,6 +26962,9 @@
           "required": true,
           "description": "The bot command"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextButton": {
@@ -25683,6 +26990,9 @@
           "required": true,
           "description": "The button"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextCashtag": {
@@ -25716,6 +27026,9 @@
           "required": true,
           "description": "The cashtag"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextCode": {
@@ -25741,6 +27054,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextCustomEmoji": {
@@ -25774,6 +27090,9 @@
           "required": true,
           "description": "Alternative emoji for the custom emoji"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextDateTime": {
@@ -25815,6 +27134,9 @@
           "required": true,
           "description": "The string that defines the formatting of the date and time. See date-time entity formatting for more details."
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextEmailAddress": {
@@ -25848,6 +27170,9 @@
           "required": true,
           "description": "The email address"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextHashtag": {
@@ -25881,6 +27206,9 @@
           "required": true,
           "description": "The hashtag"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextItalic": {
@@ -25906,6 +27234,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextMarked": {
@@ -25931,6 +27262,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextMathematicalExpression": {
@@ -25956,6 +27290,9 @@
           "required": true,
           "description": "The expression in LaTeX format"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextMention": {
@@ -25989,6 +27326,9 @@
           "required": true,
           "description": "The username"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextPhoneNumber": {
@@ -26022,6 +27362,9 @@
           "required": true,
           "description": "The phone number"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextReference": {
@@ -26055,6 +27398,9 @@
           "required": true,
           "description": "The name of the reference"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextReferenceLink": {
@@ -26088,6 +27434,9 @@
           "required": true,
           "description": "The name of the reference"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextSpoiler": {
@@ -26113,6 +27462,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextStrikethrough": {
@@ -26138,6 +27490,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextSubscript": {
@@ -26163,6 +27518,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextSuperscript": {
@@ -26188,6 +27546,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextTextMention": {
@@ -26221,6 +27582,9 @@
           "required": true,
           "description": "The mentioned user"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextTonAddress": {
@@ -26254,6 +27618,9 @@
           "required": true,
           "description": "The address"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextUnderline": {
@@ -26279,6 +27646,9 @@
           "required": true,
           "description": "The text"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "RichTextUrl": {
@@ -26312,6 +27682,9 @@
           "required": true,
           "description": "URL of the link"
         }
+      ],
+      "subtype_of": [
+        "RichText"
       ]
     },
     "SentGuestMessage": {
@@ -26910,7 +28283,14 @@
       "description": [
         "Describes the type of a clickable area on a story. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "StoryAreaTypeLocation",
+        "StoryAreaTypeSuggestedReaction",
+        "StoryAreaTypeLink",
+        "StoryAreaTypeWeather",
+        "StoryAreaTypeUniqueGift"
+      ]
     },
     "StoryAreaTypeLink": {
       "name": "StoryAreaTypeLink",
@@ -26935,6 +28315,9 @@
           "required": true,
           "description": "HTTP or tg:// URL to be opened when the area is clicked"
         }
+      ],
+      "subtype_of": [
+        "StoryAreaType"
       ]
     },
     "StoryAreaTypeLocation": {
@@ -26976,6 +28359,9 @@
           "required": false,
           "description": "Optional . Address of the location"
         }
+      ],
+      "subtype_of": [
+        "StoryAreaType"
       ]
     },
     "StoryAreaTypeSuggestedReaction": {
@@ -27017,6 +28403,9 @@
           "required": false,
           "description": "Optional . Pass True if the reaction area corner is flipped"
         }
+      ],
+      "subtype_of": [
+        "StoryAreaType"
       ]
     },
     "StoryAreaTypeUniqueGift": {
@@ -27042,6 +28431,9 @@
           "required": true,
           "description": "Unique name of the gift"
         }
+      ],
+      "subtype_of": [
+        "StoryAreaType"
       ]
     },
     "StoryAreaTypeWeather": {
@@ -27083,6 +28475,9 @@
           "required": true,
           "description": "A color of the area background in the ARGB format"
         }
+      ],
+      "subtype_of": [
+        "StoryAreaType"
       ]
     },
     "SuccessfulPayment": {
@@ -27707,7 +29102,16 @@
       "description": [
         "This object describes the source of a transaction, or its recipient for outgoing transactions. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "TransactionPartnerUser",
+        "TransactionPartnerChat",
+        "TransactionPartnerAffiliateProgram",
+        "TransactionPartnerFragment",
+        "TransactionPartnerTelegramAds",
+        "TransactionPartnerTelegramApi",
+        "TransactionPartnerOther"
+      ]
     },
     "TransactionPartnerAffiliateProgram": {
       "name": "TransactionPartnerAffiliateProgram",
@@ -27740,6 +29144,9 @@
           "required": true,
           "description": "The number of Telegram Stars received by the bot for each 1000 Telegram Stars received by the affiliate program sponsor from referred users"
         }
+      ],
+      "subtype_of": [
+        "TransactionPartner"
       ]
     },
     "TransactionPartnerChat": {
@@ -27773,6 +29180,9 @@
           "required": false,
           "description": "Optional . The gift sent to the chat by the bot"
         }
+      ],
+      "subtype_of": [
+        "TransactionPartner"
       ]
     },
     "TransactionPartnerFragment": {
@@ -27798,6 +29208,9 @@
           "required": false,
           "description": "Optional . State of the transaction if the transaction is outgoing"
         }
+      ],
+      "subtype_of": [
+        "TransactionPartner"
       ]
     },
     "TransactionPartnerOther": {
@@ -27815,6 +29228,9 @@
           "required": true,
           "description": "Type of the transaction partner, always “other”"
         }
+      ],
+      "subtype_of": [
+        "TransactionPartner"
       ]
     },
     "TransactionPartnerTelegramAds": {
@@ -27832,6 +29248,9 @@
           "required": true,
           "description": "Type of the transaction partner, always “telegram_ads”"
         }
+      ],
+      "subtype_of": [
+        "TransactionPartner"
       ]
     },
     "TransactionPartnerTelegramApi": {
@@ -27857,6 +29276,9 @@
           "required": true,
           "description": "The number of successful requests that exceeded regular limits and were therefore billed"
         }
+      ],
+      "subtype_of": [
+        "TransactionPartner"
       ]
     },
     "TransactionPartnerUser": {
@@ -27946,6 +29368,9 @@
           "required": false,
           "description": "Optional . Number of months the gifted Telegram Premium subscription will be active for; for “premium_purchase” transactions only"
         }
+      ],
+      "subtype_of": [
+        "TransactionPartner"
       ]
     },
     "UniqueGift": {
@@ -29469,7 +30894,12 @@
       "description": [
         "This object describes the type of a query from a widget. Currently, it can be one of"
       ],
-      "fields": null
+      "fields": null,
+      "subtypes": [
+        "WidgetQueryTypeData",
+        "WidgetQueryTypeSignData",
+        "WidgetQueryTypeSentTransaction"
+      ]
     },
     "WidgetQueryTypeData": {
       "name": "WidgetQueryTypeData",
@@ -29494,6 +30924,9 @@
           "required": false,
           "description": "Optional . TON wallet card of the user who sent the query, if it was sent to the bot along with the query"
         }
+      ],
+      "subtype_of": [
+        "WidgetQueryType"
       ]
     },
     "WidgetQueryTypeSentTransaction": {
@@ -29527,6 +30960,9 @@
           "required": true,
           "description": "Value of msg_hash of the transaction"
         }
+      ],
+      "subtype_of": [
+        "WidgetQueryType"
       ]
     },
     "WidgetQueryTypeSignData": {
@@ -29560,6 +30996,9 @@
           "required": true,
           "description": "JSON-serialized signed data"
         }
+      ],
+      "subtype_of": [
+        "WidgetQueryType"
       ]
     },
     "WidgetQueryWallet": {
