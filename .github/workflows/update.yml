@@ -29,14 +29,35 @@ jobs:
       - name: Generate API artifacts from official documentation
         run: python update.py
 
+      - name: Read schema version and release date
+        id: metadata
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime
+
+          with open("api.json", encoding="utf-8") as stream:
+              document = json.load(stream)
+
+          release_date = datetime.strptime(
+              document["release_date"], "%B %d, %Y"
+          ).strftime("%-d %b, %Y")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as stream:
+              stream.write(f"version={document['version']}\n")
+              stream.write(f"latest_update={release_date}\n")
+          PY
+
       - name: Validate JSON artifacts
         run: python update.py --check
 
       - name: Open or update review pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "Update Telegram Bot API artifacts"
-          title: "Update Telegram Bot API artifacts"
+          commit-message: |
+            Version: ${{ steps.metadata.outputs.version }}
+            Latest Update: ${{ steps.metadata.outputs.latest_update }}
+          title: "${{ steps.metadata.outputs.version }} - ${{ steps.metadata.outputs.latest_update }}"
           body: |
             This PR was generated from the official Telegram Bot API documentation.
 
