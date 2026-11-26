@@ -25,10 +25,9 @@ the `methods` and `types` collections.
 The updater uses Python 3.13 in GitHub Actions and has no third-party dependencies.
 
 ```sh
-python update_api.py          # Fetch Telegram docs and regenerate both JSON files
-python update_api.py --check  # Validate both JSON files offline
-python -m unittest -v        # Run the parser and artifact tests
+python update.py          # Fetch Telegram docs and regenerate both JSON files
+python update.py --check  # Validate both JSON files offline
 ```
 
 To regenerate offline from a saved copy of the official page, run
-`python update_api.py --source-html /path/to/telegram-api.html`.
+`python update.py --source-html /path/to/telegram-api.html`.

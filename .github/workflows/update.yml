@@ -27,10 +27,10 @@ jobs:
           python-version: "3.13"
 
       - name: Generate API artifacts from official documentation
-        run: python update_api.py
+        run: python update.py
 
       - name: Validate JSON artifacts
-        run: python update_api.py --check
+        run: python update.py --check
 
       - name: Open or update review pull request
         uses: peter-evans/create-pull-request@v7

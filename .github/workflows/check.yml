@@ -19,5 +19,4 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
-      - run: python -m unittest -v
-      - run: python update_api.py --check
+      - run: python update.py --check
