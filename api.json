@@ -3,7 +3,7 @@
   "release_date": "November 22, 2026",
   "changelog": "https://core.telegram.org/bots/api#recent-changes",
   "source": "https://core.telegram.org/bots/api",
-  "source_sha256": "63ba623c80c72b2825a00d3ad84589441f6b445dd3b7807c239864766e4f0f0b",
+  "source_sha256": "e8899ad585b39a2c53051af1ead8671cefb2b2791e798b0af719f43f6982995c",
   "aliases": {
     "methods": {},
     "types": {}
